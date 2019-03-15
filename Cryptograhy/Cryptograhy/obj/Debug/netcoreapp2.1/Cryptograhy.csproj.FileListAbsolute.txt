@@ -1,0 +1,11 @@
+C:\Users\user.v2.0\source\repos\Cryptograhy\Cryptograhy\bin\Debug\netcoreapp2.1\Cryptograhy.deps.json
+C:\Users\user.v2.0\source\repos\Cryptograhy\Cryptograhy\bin\Debug\netcoreapp2.1\Cryptograhy.runtimeconfig.json
+C:\Users\user.v2.0\source\repos\Cryptograhy\Cryptograhy\bin\Debug\netcoreapp2.1\Cryptograhy.runtimeconfig.dev.json
+C:\Users\user.v2.0\source\repos\Cryptograhy\Cryptograhy\bin\Debug\netcoreapp2.1\Cryptograhy.dll
+C:\Users\user.v2.0\source\repos\Cryptograhy\Cryptograhy\bin\Debug\netcoreapp2.1\Cryptograhy.pdb
+C:\Users\user.v2.0\source\repos\Cryptograhy\Cryptograhy\obj\Debug\netcoreapp2.1\Cryptograhy.csprojAssemblyReference.cache
+C:\Users\user.v2.0\source\repos\Cryptograhy\Cryptograhy\obj\Debug\netcoreapp2.1\Cryptograhy.csproj.CoreCompileInputs.cache
+C:\Users\user.v2.0\source\repos\Cryptograhy\Cryptograhy\obj\Debug\netcoreapp2.1\Cryptograhy.AssemblyInfoInputs.cache
+C:\Users\user.v2.0\source\repos\Cryptograhy\Cryptograhy\obj\Debug\netcoreapp2.1\Cryptograhy.AssemblyInfo.cs
+C:\Users\user.v2.0\source\repos\Cryptograhy\Cryptograhy\obj\Debug\netcoreapp2.1\Cryptograhy.dll
+C:\Users\user.v2.0\source\repos\Cryptograhy\Cryptograhy\obj\Debug\netcoreapp2.1\Cryptograhy.pdb
