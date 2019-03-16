@@ -6,9 +6,12 @@ namespace Cryptograhy
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine(Convert.ToInt32('1'));
-            Console.WriteLine(ToBinary("1234"));
-            Console.WriteLine(FromBinary("0000000000110100000000000011001100000000001100100000000000110001"));
+            EncryptionMethods test = new EncryptionMethods(1);
+           
+            //Console.WriteLine(EncryptionMethods.ShiftRegister("1010"));
+            //Console.WriteLine(ToBinary("1234"));
+            //Console.WriteLine(FromBinary("0000000000110100000000000011001100000000001100100000000000110001"));
+            //Console.WriteLine(XOR("1010","1011"));
             Console.ReadLine();
         }
     }
@@ -69,8 +72,99 @@ namespace Cryptograhy
         }
         public static string XOR ( string textToConvert , string PSG )
         {
-            //string binary = Convert.ToString(Convert.ToInt32(ToBinary(textToConvert))^Convert.ToInt32(PSG));
-            return "";
+            string binary="";
+            for (int counter = 0 ; counter<textToConvert.Length ; counter++)
+            {
+                binary+=Convert.ToInt32(Convert.ToString(PSG[counter]))^Convert.ToInt32(Convert.ToString(textToConvert[counter]));
+            }
+            return binary;
+        }
+    }
+    class EncryptionMethods
+    {
+        private static int Key;
+        public EncryptionMethods(int Number)
+        {
+            Console.WriteLine();
+            switch(Number)
+            {
+                case 0:
+                    break;
+                case 1:
+                    SP_network newCryptoSystem = new SP_network(3);
+                    string output;
+                    newCryptoSystem("1001",out output);
+                    break;
+            }
+        }
+        //private
+        private string GeneratePSG(int Length)
+        {
+            string output = "";
+            Random random = new Random();
+            for (int counter = 0 ; counter<Length ; counter++)
+            {
+                output += Convert.ToString(random.Next(0,1));
+            }
+            return output;
+        }
+        private string ShiftRegister (string inputString)
+        {
+            string output = XOR(Convert.ToString(inputString[inputString.Length-1]),Convert.ToString(inputString[inputString.Length-2]));
+            //Console.WriteLine(output);
+            for (int counter = 0 ; counter<inputString.Length-1; counter++)
+            {
+                //Console.WriteLine(inputString[counter]);
+                output += inputString[counter];
+            }
+            return output;
+        }
+        class SP_network
+        {
+            static int countOfRounds = 0;
+            private int[] RoundKey ;
+            private string[][] S_table ;
+            private int[][] P_table ;
+            public SP_network (int rounds)
+            {
+                countOfRounds = rounds;
+                GenerateRoundKey();
+                Console.WriteLine("in system");
+                RoundKey = new int[countOfRounds];
+                S_table = new string[countOfRounds][];
+                P_table = new int[countOfRounds][];
+                Console.WriteLine(S_table.Length +"     "+ P_table.Length+"     "+RoundKey.Length);
+            }
+           
+            private void SP_networkGenerate (string input ,out string  output)
+            {
+                Console.WriteLine(S_table.Length + "     " + P_table.Length + "     " + RoundKey.Length);
+                Console.ReadLine();
+                output = input;
+                for (int counter = 0 ; counter < countOfRounds ; counter++)
+                {
+                    output = S_stage(output);
+                    output = P_stage(output);
+                   //XOR();
+                }
+                 
+            }
+            private static string S_stage(string inputString)
+            {
+                return "";
+            }
+            private static string P_stage(string inputString)
+            {
+                return "";
+            }
+            private static void GenerateRoundKey()
+            {
+                for (int counter = 0 ; counter<countOfRounds ; counter++)
+                {
+
+                }
+
+            }
         }
     }
 

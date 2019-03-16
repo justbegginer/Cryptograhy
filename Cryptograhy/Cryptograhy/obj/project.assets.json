@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user.v2.0\\source\\repos\\Cryptograhy\\Cryptograhy\\Cryptograhy.csproj",
+      "projectUniqueName": "C:\\Users\\user.v2.0\\Documents\\GitHub\\DiffieHellmanProtocol\\Cryptograhy\\Cryptograhy\\Cryptograhy\\Cryptograhy.csproj",
       "projectName": "Cryptograhy",
-      "projectPath": "C:\\Users\\user.v2.0\\source\\repos\\Cryptograhy\\Cryptograhy\\Cryptograhy.csproj",
+      "projectPath": "C:\\Users\\user.v2.0\\Documents\\GitHub\\DiffieHellmanProtocol\\Cryptograhy\\Cryptograhy\\Cryptograhy\\Cryptograhy.csproj",
       "packagesPath": "C:\\Users\\user.v2.0\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user.v2.0\\source\\repos\\Cryptograhy\\Cryptograhy\\obj\\",
+      "outputPath": "C:\\Users\\user.v2.0\\Documents\\GitHub\\DiffieHellmanProtocol\\Cryptograhy\\Cryptograhy\\Cryptograhy\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
