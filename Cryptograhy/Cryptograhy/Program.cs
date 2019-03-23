@@ -1,19 +1,30 @@
 ﻿using System;
 using static Cryptograhy.BinaryOperation;
+using System.IO;
 namespace Cryptograhy
-{
+{ 
     class Program
     {
+        
         static void Main(string[] args)
         {
-            EncryptionMethods test = new EncryptionMethods(1);
-           
+            
+            Console.WriteLine("Выберите метод шифрования \n 1-С помощью регистра регистра сдвига с линейной обратной связью \n 2-Сеть Фейстеля \n 3-SP-сеть ");
+            int number = Convert.ToInt32(Console.ReadLine());
+            EncryptionMethods test = new EncryptionMethods(number);
             //Console.WriteLine(EncryptionMethods.ShiftRegister("1010"));
             //Console.WriteLine(ToBinary("1234"));
             //Console.WriteLine(FromBinary("0000000000110100000000000011001100000000001100100000000000110001"));
             //Console.WriteLine(XOR("1010","1011"));
             Console.ReadLine();
+            using (StreamWriter output = new StreamWriter("OUTPUT.txt"))
+            {
+
+                output.WriteLine();
+
+            }
         }
+        StreamWriter output = new StreamWriter("Output"); 
     }
     class BinaryOperation
     {
@@ -82,18 +93,22 @@ namespace Cryptograhy
     }
     class EncryptionMethods
     {
+        public static int EncryptionMethodsChoice;
         private static int Key;
-        public EncryptionMethods(int Number)
+        public EncryptionMethods(int number=0)
         {
-            Console.WriteLine();
-            switch(Number)
+            EncryptionMethodsChoice  = number;
+            switch(EncryptionMethodsChoice)
             {
-                case 0:
-                    break;
                 case 1:
-                    SP_network newCryptoSystem = new SP_network(3);
-                    string output;
-                    newCryptoSystem("1001",out output);
+                    //ShiftRegister();
+                    break;
+                case 2:
+                    Networks newCryptoSystem = new Networks(1);
+
+                    break;
+                case 3:
+                    Networks newCryptoSystem0 = new Networks(2);
                     break;
             }
         }
@@ -111,60 +126,98 @@ namespace Cryptograhy
         private string ShiftRegister (string inputString)
         {
             string output = XOR(Convert.ToString(inputString[inputString.Length-1]),Convert.ToString(inputString[inputString.Length-2]));
-            //Console.WriteLine(output);
-            for (int counter = 0 ; counter<inputString.Length-1; counter++)
-            {
-                //Console.WriteLine(inputString[counter]);
-                output += inputString[counter];
-            }
-            return output;
+            //Console.WriteLine(output);        
+            //Console.WriteLine(inputString[counter]);
+            inputString = inputString.Substring(1,inputString.Length-1) + output;
+            return inputString;
         }
-        class SP_network
+        class Networks
         {
             static int countOfRounds = 0;
-            private int[] RoundKey ;
-            private string[][] S_table ;
-            private int[][] P_table ;
-            public SP_network (int rounds)
+            public Networks (int choice)
             {
-                countOfRounds = rounds;
-                GenerateRoundKey();
-                Console.WriteLine("in system");
-                RoundKey = new int[countOfRounds];
-                S_table = new string[countOfRounds][];
-                P_table = new int[countOfRounds][];
-                Console.WriteLine(S_table.Length +"     "+ P_table.Length+"     "+RoundKey.Length);
-            }
-           
-            private void SP_networkGenerate (string input ,out string  output)
-            {
-                Console.WriteLine(S_table.Length + "     " + P_table.Length + "     " + RoundKey.Length);
-                Console.ReadLine();
-                output = input;
-                for (int counter = 0 ; counter < countOfRounds ; counter++)
+                switch(choice)
                 {
-                    output = S_stage(output);
-                    output = P_stage(output);
-                   //XOR();
+                    case 1:
+                        break;
+                    case 2:
+                        break;
                 }
-                 
             }
-            private static string S_stage(string inputString)
+            class SP_network
             {
-                return "";
+                
+                private int[] RoundKey;
+                private string[][] S_table;
+                private int[][] P_table;
+                public SP_network(int rounds)
+                {
+                    
+                    countOfRounds = rounds;
+                    GenerateRoundKey();
+                    Console.WriteLine("in system");
+                    RoundKey = new int[countOfRounds];
+                    S_table = new string[countOfRounds][];
+                    P_table = new int[countOfRounds][];
+                    //SP_networkGenerate();
+                }
+
+                private void SP_networkGenerate(string input, out string output)
+                {
+                    Console.WriteLine(S_table.Length + "     " + P_table.Length + "     " + RoundKey.Length);
+                    Console.ReadLine();
+                    output = input;
+                    for (int counter = 0; counter < countOfRounds; counter++)
+                    {
+                        output = S_stage(output);
+                        output = P_stage(output);
+                        //XOR();
+                    }
+
+                }
+                private static string S_stage(string inputString)
+                {
+                    return "";
+                }
+                private static string P_stage(string inputString)
+                {
+                    return "";
+                }
+               
             }
-            private static string P_stage(string inputString)
+            class Feistel_network
             {
-                return "";
+
             }
-            private static void GenerateRoundKey()
+            private static  void GenerateRoundKey()
             {
-                for (int counter = 0 ; counter<countOfRounds ; counter++)
+                for (int counter = 0; counter < countOfRounds; counter++)
                 {
 
                 }
 
             }
+        }
+    }
+    class Process
+    {
+        public Process()
+        {
+            switch (EncryptionMethods.EncryptionMethodsChoice)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
+
+        }
+    }
+    class Writer
+    {
+        public Writer()
+        {
+
         }
     }
 
